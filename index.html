@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大纲转幻灯片 · Outline2Slides</title>
+<meta name="description" content="免费开源、纯浏览器运行的小工具：把文本大纲自动拆分成幻灯片结构，预览并导出 Marp 格式 Markdown，可直接用 Marp/reveal.js 生成真正的 PPT。不用安装、不用注册。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>大纲<span class="accent">转</span>幻灯片</h1>
+    <p class="tagline">左边写大纲（# 标题一页，- 是要点），右边自动排成幻灯片预览，可导出 Marp 格式 Markdown。</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel panel-input">
+      <div class="panel-head">
+        <span>大纲</span>
+        <div class="btns">
+          <button id="btnExample" class="btn btn-ghost">加载示例</button>
+          <button id="btnGenerate" class="btn btn-primary">生成 →</button>
+        </div>
+      </div>
+      <textarea id="outlineInput" spellcheck="false" placeholder="# 封面标题
+- 副标题或作者
+
+# 第一页标题
+- 要点一
+- 要点二
+- 要点三
+
+# 第二页标题
+- 要点一
+- 要点二"></textarea>
+      <p class="hint"># 开头 = 新的一页标题，- 开头 = 该页要点，空行分隔幻灯片也可以。</p>
+    </section>
+
+    <section class="panel panel-output">
+      <div class="panel-head">
+        <span>幻灯片预览</span>
+        <div class="btns">
+          <button id="btnExportMd" class="btn btn-ghost">导出 Marp Markdown</button>
+        </div>
+      </div>
+      <div id="slidesWrap" class="slides-wrap"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>MIT 协议开源，不联网、不追踪 —— 大纲内容不会离开你的浏览器。导出的 Markdown 兼容 <a href="https://marp.app/" target="_blank" rel="noopener">Marp</a>，可以直接生成 PPTX / PDF / HTML 幻灯片。</p>
+    <p>想要 AI 一句话自动生成大纲、智能排版、图表美化、一键换肤，还有完整的多租户管理后台？<a href="https://inzyxuashop.com/aippt-yuanma.html" target="_blank" rel="noopener">看看完整版 AI PPT 源码 →</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
